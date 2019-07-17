@@ -1,0 +1,74 @@
+
+;; Function thread0 (thread0, funcdef_no=0, decl_uid=1988, cgraph_uid=1, symbol_order=2)
+
+thread0 ()
+{
+  atomic struct rcutest * __atomic_store_tmp;
+  atomic struct rcutest * * __atomic_store_ptr;
+  long unsigned int __atomic_store_tmp.1_2;
+
+  <bb 2> :
+  rt.a = -42;
+  rt.b = -43;
+  rt.c = -44;
+  __atomic_store_tmp.1_2 = (long unsigned int) &rt;
+  __atomic_store_8 (&gp, __atomic_store_tmp.1_2, 3);
+  GIMPLE_NOP
+  return;
+
+}
+
+
+
+;; Function thread1 (thread1, funcdef_no=1, decl_uid=1992, cgraph_uid=2, symbol_order=3)
+
+thread1 ()
+{
+  atomic struct rcutest * __atomic_load_tmp;
+  atomic struct rcutest * * __atomic_load_ptr;
+  struct rcutest * p;
+  int j;
+  int i;
+  long unsigned int _1;
+  atomic struct rcutest * _2;
+  _Bool _3;
+  int _4;
+  _Bool _5;
+  int _6;
+
+  <bb 2> :
+  _1 = __atomic_load_8 (&gp, 1);
+  _2 = (atomic struct rcutest *) _1;
+  GIMPLE_NOP
+  j_17 = MEM[(struct rcutest *)_2].a;
+  if (_2 == &rt)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  i_19 = MEM[(struct rcutest *)_2].b;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (_2 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  i_18 = MEM[(struct rcutest *)_2].c;
+
+  <bb 6> :
+  # i_7 = PHI <i_19(3), -1(4), i_18(5)>
+  _3 = i_7 < 0;
+  _4 = (int) _3;
+  assert (_4);
+  _5 = j_17 < 0;
+  _6 = (int) _5;
+  assert (_6);
+  return;
+
+}
+
+

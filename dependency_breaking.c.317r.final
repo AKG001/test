@@ -1,0 +1,233 @@
+
+;; Function thread0 (thread0, funcdef_no=0, decl_uid=1988, cgraph_uid=1, symbol_order=2)
+
+
+
+thread0
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 7 [sp]
+;;  eh block artificial uses 	 7 [sp] 16 [argp]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 7 [sp] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 7 [sp]
+;;  regs ever live 	
+;;  ref usage 	r0={1d} r1={1d} r2={1d} r4={1d} r5={1d} r7={1d,2u} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r36={1d} r37={1d} 
+;;    total ref usage 18{16d,2u,0e} in 6{6 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 17 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 17 3 2 2 NOTE_INSN_PROLOGUE_END)
+(note 2 17 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 8 2 (set (mem/c:SI (symbol_ref:DI ("rt") [flags 0x2]  <var_decl 0x7f7e0e347098 rt>) [1 rt.a+0 S4 A64])
+        (const_int -42 [0xffffffffffffffd6])) "dependency_breaking.c":29:7 67 {*movsi_internal}
+     (nil))
+(insn 8 6 10 2 (set (mem/c:SI (const:DI (plus:DI (symbol_ref:DI ("rt") [flags 0x2]  <var_decl 0x7f7e0e347098 rt>)
+                    (const_int 4 [0x4]))) [1 rt.b+0 S4 A32])
+        (const_int -43 [0xffffffffffffffd5])) "dependency_breaking.c":30:7 67 {*movsi_internal}
+     (nil))
+(insn 10 8 11 2 (set (mem/c:SI (const:DI (plus:DI (symbol_ref:DI ("rt") [flags 0x2]  <var_decl 0x7f7e0e347098 rt>)
+                    (const_int 8 [0x8]))) [1 rt.c+0 S4 A64])
+        (const_int -44 [0xffffffffffffffd4])) "dependency_breaking.c":31:7 67 {*movsi_internal}
+     (nil))
+(insn 11 10 13 2 (set (mem/v:BLK (scratch:DI) [0  A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0  A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) "dependency_breaking.c":32:2 688 {*memory_blockage}
+     (nil))
+(insn 13 11 18 2 (set (mem/v:DI (symbol_ref:DI ("gp") [flags 0x2]  <var_decl 0x7f7e0e347000 gp>) [-1  S8 A64])
+        (unspec:DI [
+                (symbol_ref:DI ("rt") [flags 0x2]  <var_decl 0x7f7e0e347098 rt>)
+                (const_int 3 [0x3])
+            ] UNSPEC_STA)) "dependency_breaking.c":32:2 5785 {atomic_storedi_1}
+     (nil))
+(note 18 13 19 2 NOTE_INSN_EPILOGUE_BEG)
+(jump_insn 19 18 20 2 (simple_return) "dependency_breaking.c":33:1 690 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 20 19 16)
+(note 16 20 0 NOTE_INSN_DELETED)
+
+;; Function thread1 (thread1, funcdef_no=1, decl_uid=1992, cgraph_uid=2, symbol_order=3)
+
+
+
+thread1
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 7 [sp]
+;;  eh block artificial uses 	 7 [sp] 16 [argp]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 7 [sp] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 3 [bx] 7 [sp]
+;;  regs ever live 	 0 [ax] 3 [bx] 5 [di] 7 [sp] 17 [flags]
+;;  ref usage 	r0={10d,7u} r1={3d} r2={3d} r3={4d,4u} r4={3d} r5={8d,3u} r7={5d,20u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={8d,2u} r18={2d} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} 
+;;    total ref usage 212{176d,36u,0e} in 27{25 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 52 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 52 4 53 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "dependency_breaking.c":36:1 42 {*pushdi2_rex64}
+     (expr_list:REG_DEAD (reg:DI 3 bx)
+        (nil)))
+(insn/f 53 52 54 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "dependency_breaking.c":36:1 959 {pro_epilogue_adjust_stack_add_di}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (nil))))
+(note 54 53 2 2 NOTE_INSN_PROLOGUE_END)
+(note 2 54 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 8 2 (set (reg:DI 0 ax [orig:82 _1 ] [82])
+        (mem/v:DI (symbol_ref:DI ("gp") [flags 0x2]  <var_decl 0x7f7e0e347000 gp>) [-1  S8 A64])) "dependency_breaking.c":41:6 66 {*movdi_internal}
+     (nil))
+(insn 8 6 9 2 (set (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])) [2 p+0 S8 A64])
+        (reg:DI 0 ax [orig:82 _1 ] [82])) "dependency_breaking.c":41:4 66 {*movdi_internal}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:82 _1 ] [82])
+        (nil)))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:84 p.2_3 ] [84])
+        (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])) [2 p+0 S8 A64])) "dependency_breaking.c":42:7 66 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg/v:SI 3 bx [orig:94 j ] [94])
+        (mem:SI (reg/f:DI 0 ax [orig:84 p.2_3 ] [84]) [1 p.2_3->a+0 S4 A32])) "dependency_breaking.c":42:4 67 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:84 p.2_3 ] [84])
+        (nil)))
+(note 11 10 12 2 NOTE_INSN_DELETED)
+(insn 12 11 13 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                    (const_int 8 [0x8])) [2 p+0 S8 A64])
+            (symbol_ref:DI ("rt") [flags 0x2]  <var_decl 0x7f7e0e347098 rt>))) "dependency_breaking.c":43:5 12 {*cmpdi_1}
+     (nil))
+(jump_insn 13 12 20 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 62)
+            (pc))) "dependency_breaking.c":43:5 659 {*jcc}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (int_list:REG_BR_PROB 322122548 (nil)))
+ -> 62)
+(note 20 13 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 3 3 (set (reg/f:DI 0 ax [orig:87 p.5_6 ] [87])
+        (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])) [2 p+0 S8 A64])) "dependency_breaking.c":45:10 66 {*movdi_internal}
+     (nil))
+(insn 3 21 22 3 (set (reg/v:SI 5 di [orig:93 i ] [93])
+        (const_int -1 [0xffffffffffffffff])) "dependency_breaking.c":37:6 67 {*movsi_internal}
+     (nil))
+(insn 22 3 23 3 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:87 p.5_6 ] [87])
+            (const_int 0 [0]))) "dependency_breaking.c":45:9 8 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:87 p.5_6 ] [87])
+        (nil)))
+(jump_insn 23 22 24 3 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 27)
+            (pc))) "dependency_breaking.c":45:9 659 {*jcc}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (int_list:REG_BR_PROB 322122548 (nil)))
+ -> 27)
+(note 24 23 25 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 4 (set (reg/f:DI 0 ax [orig:88 p.6_7 ] [88])
+        (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])) [2 p+0 S8 A64])) "dependency_breaking.c":46:8 66 {*movdi_internal}
+     (nil))
+(insn 26 25 27 4 (set (reg/v:SI 5 di [orig:93 i ] [93])
+        (mem:SI (plus:DI (reg/f:DI 0 ax [orig:88 p.6_7 ] [88])
+                (const_int 8 [0x8])) [1 p.6_7->c+0 S4 A32])) "dependency_breaking.c":46:5 67 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:88 p.6_7 ] [88])
+        (nil)))
+(code_label 27 26 28 5 4 (nil) [2 uses])
+(note 28 27 31 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 31 28 33 5 (parallel [
+            (set (reg:SI 5 di [95])
+                (lshiftrt:SI (reg/v:SI 5 di [orig:93 i ] [93])
+                    (const_int 31 [0x1f])))
+            (clobber (reg:CC 17 flags))
+        ]) "dependency_breaking.c":47:2 564 {*lshrsi3_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 33 31 34 5 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "dependency_breaking.c":47:2 69 {*movqi_internal}
+     (nil))
+(call_insn 34 33 37 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("assert") [flags 0x41]  <function_decl 0x7f7e0e33ee00 assert>) [0 assert S1 A8])
+            (const_int 0 [0]))) "dependency_breaking.c":47:2 677 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_UNUSED (reg:SI 0 ax)
+            (nil)))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (nil))))
+(insn 37 34 51 5 (parallel [
+            (set (reg/v:SI 3 bx [orig:94 j ] [94])
+                (lshiftrt:SI (reg/v:SI 3 bx [orig:94 j ] [94])
+                    (const_int 31 [0x1f])))
+            (clobber (reg:CC 17 flags))
+        ]) "dependency_breaking.c":48:2 564 {*lshrsi3_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 51 37 39 5 (set (reg:SI 5 di [96])
+        (reg/v:SI 3 bx [orig:94 j ] [94])) "dependency_breaking.c":48:2 67 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/v:SI 3 bx [orig:94 j ] [94])
+        (nil)))
+(insn 39 51 40 5 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "dependency_breaking.c":48:2 69 {*movqi_internal}
+     (nil))
+(call_insn 40 39 55 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("assert") [flags 0x41]  <function_decl 0x7f7e0e33ee00 assert>) [0 assert S1 A8])
+            (const_int 0 [0]))) "dependency_breaking.c":48:2 677 {*call_value}
+     (expr_list:REG_DEAD (reg:SI 5 di)
+        (expr_list:REG_UNUSED (reg:SI 0 ax)
+            (nil)))
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:SI (use (reg:SI 5 di))
+            (nil))))
+(note 55 40 56 5 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 56 55 57 5 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "dependency_breaking.c":49:1 959 {pro_epilogue_adjust_stack_add_di}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 16 [0x10])))
+            (nil))))
+(insn/f 57 56 58 5 (set (reg:DI 3 bx)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "dependency_breaking.c":49:1 52 {*popdi1}
+     (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:DI 7 sp)
+            (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])))
+        (nil)))
+(jump_insn 58 57 61 5 (simple_return) "dependency_breaking.c":49:1 690 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 61 58 62)
+(code_label 62 61 14 6 7 (nil) [1 uses])
+(note 14 62 15 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 6 (set (reg/f:DI 0 ax [orig:86 p.4_5 ] [86])
+        (mem/d/f/c:DI (plus:DI (reg/f:DI 7 sp)
+                (const_int 8 [0x8])) [2 p+0 S8 A64])) "dependency_breaking.c":44:8 66 {*movdi_internal}
+     (nil))
+(insn 16 15 63 6 (set (reg/v:SI 5 di [orig:93 i ] [93])
+        (mem:SI (plus:DI (reg/f:DI 0 ax [orig:86 p.4_5 ] [86])
+                (const_int 4 [0x4])) [1 p.4_5->b+0 S4 A32])) "dependency_breaking.c":44:5 67 {*movsi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:86 p.4_5 ] [86])
+        (nil)))
+(jump_insn 63 16 64 6 (set (pc)
+        (label_ref 27)) 660 {jump}
+     (nil)
+ -> 27)
+(barrier 64 63 49)
+(note 49 64 0 NOTE_INSN_DELETED)
